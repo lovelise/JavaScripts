@@ -1,0 +1,68 @@
+Eloquent JavaScript 4.2 reversing an array 
+
+// ******************************************************************************
+//NO NEEDED FOR NESTED LOOP 
+//PLEASE REMEMBER HOW NESTED WORK!!!!
+function reverseArray([...elements]){
+  let temp;
+	for (let i = 0, j = elements.length-1; i < j; i++, j--){
+    	temp = elements[i];
+      	elements[i] = elements[j];
+      	elements[j] = temp;
+      
+    }
+  return elements;
+}
+
+function reverseArrayInPlace([...elements]){
+  
+}
+console.log(reverseArray(["A", "F", "C","K"]));
+// → ["K", "C", "F", "A"]
+
+//*****************************************************************************
+function reverseArray([...elements]){
+  let n = []
+  let temp;
+  for (let i = 0, j=elements.length-1; i <= j; i++, j--){
+        temp = elements[i];
+      	n[i] = elements[j];
+      	n[j] = temp 
+  }
+  
+  return n;
+}
+
+console.log(reverseArray(["A", "B", "C","K"]));
+// → ["K", "C", "B", "A"]
+
+//******************************************************************************
+//with array method unshift move element to the beginning of array 
+//******************************************************************************
+// Your code here.
+function reverseArray([...elements]){
+  let n = []
+  for (let i = 0; i <= elements.length-1; i++){
+		n.unshift(elements[i])
+  }
+  
+  return n;
+}
+
+console.log(reverseArray(["A", "B", "C","K"]));
+// → ["K", "C", "B", "A"]
+
+
+
+//**********************************************************************************
+// Your code here.
+function reverseArray([...elements]){
+  //let n = []
+  for (let i = elements.length-1; i > elements.length-1; i--){
+		elements.push(i)
+  }
+  return elements;
+}
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
