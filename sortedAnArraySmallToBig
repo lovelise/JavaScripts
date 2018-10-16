@@ -1,0 +1,35 @@
+// Your code here.
+
+function reverseArray([...elements]){
+  let temp;
+  console.log("start");
+  for (let i = 0; i < elements.length-1; i++){
+    //elements.length-1 to get array length  array start with 0 
+    console.log("Outter loop: i is " + i);
+  	for (let j = 0; j <= elements.length-1-i; j++ ){
+      	//start with  [0] position 
+      //second for loop will compare each elements 
+      //each time it loop through means less elements to compare to 
+      // so this why j <= elements.length-1-i 
+      console.log("Inner loop: i is " + i + " j is " + j );
+      if(elements[j]>elements[j+1]){
+      	 temp = elements[j];
+        console.log("temp is " + temp);
+      	 elements[j] = elements[j+1];
+        console.log("element j is " + elements[j])
+         elements[j+1] = temp;
+         console.log("element j+1 is " + elements[j+1])
+        console.log("end of if condition." + "NEW Array: " + elements);
+      }   	
+      console.log("end of Inner loop at " + j + 
+                  " time. ARRAY at this point: " + elements )
+    }
+    console.log("end of Outter loop at " + i + " time. " + "New Array is " 
+                + elements)
+  }
+  return elements;
+}
+
+let a = [10,15,11,2,1,50];
+console.log(reverseArray(a));
+//[1,2,10,11,15,50]
