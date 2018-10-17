@@ -13,12 +13,38 @@ function reverseArray([...elements]){
     }
   return elements;
 }
-
-function reverseArrayInPlace([...elements]){
-  
-}
 console.log(reverseArray(["A", "F", "C","K"]));
 // → ["K", "C", "F", "A"]
+
+//===============================================================================
+//reverseArray(a) vs reverseArray([...a])
+//FIRST ONE WILL CHANGE THE INPUT THROUH THE FUNCTION [...a] wont 
+function reverseArray(a){
+  let temp;
+	for (let i = 0, j = a.length-1; i < j; i++, j--){
+    	temp = a[i];
+      	a[i] = a[j];
+      	a[j] = temp;
+      
+    }
+  return a;
+}
+
+let a = ["A", "F", "C","K"];
+console.log(reverseArray(a));
+// → ["K", "C", "F", "A"]
+console.log(a)
+//["K", "C", "F", "A"]
+
+
+
+
+
+
+
+
+
+
 
 //*****************************************************************************
 function reverseArray([...elements]){
@@ -56,13 +82,36 @@ console.log(reverseArray(["A", "B", "C","K"]));
 
 //**********************************************************************************
 // Your code here.
-function reverseArray([...elements]){
-  //let n = []
-  for (let i = elements.length-1; i > elements.length-1; i--){
-		elements.push(i)
+function reverseArray(elements){
+  let n = []
+  for (let i = elements.length-1; i >= 0; i--){
+		n.push(elements[i])
   }
-  return elements;
+  return n;
 }
 
-console.log(reverseArray(["A", "B", "C"]));
-// → ["C", "B", "A"];
+let a = ["A", "B", "C","D"];
+console.log(reverseArray(a));
+console.log(a);
+// →["D", "C", "B", "A"]
+
+
+
+//****************************************************
+function reverseArrayInPlace(n){
+  //let n = [];
+ 
+  for (let i = 0; i < Math.floor(n.length-1)/2; i++){
+     let temp ;
+	temp = n[i];
+    n[i] = n[n.length-1-i];
+    n[n.length-1-i] = temp;
+  }
+  return n;
+}
+
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
+//THIS FUNCTION WILL CHANGE THE STATE ON THE INPUT VALUE 
