@@ -3,6 +3,7 @@ Eloquent JavaScript 4.2 reversing an array
 // ******************************************************************************
 //NO NEEDED FOR NESTED LOOP 
 //PLEASE REMEMBER HOW NESTED WORK!!!!
+//Doing this need ([...e]) --> [[1,2,3]] when the arguments passed 
 function reverseArray([...elements]){
   let temp;
 	for (let i = 0, j = elements.length-1; i < j; i++, j--){
